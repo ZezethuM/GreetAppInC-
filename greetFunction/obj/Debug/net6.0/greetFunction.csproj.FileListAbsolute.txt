@@ -1,0 +1,15 @@
+/home/codex/c-sharp_projects/greetApp/greetFunction/bin/Debug/net6.0/greetFunction
+/home/codex/c-sharp_projects/greetApp/greetFunction/bin/Debug/net6.0/greetFunction.deps.json
+/home/codex/c-sharp_projects/greetApp/greetFunction/bin/Debug/net6.0/greetFunction.runtimeconfig.json
+/home/codex/c-sharp_projects/greetApp/greetFunction/bin/Debug/net6.0/greetFunction.dll
+/home/codex/c-sharp_projects/greetApp/greetFunction/bin/Debug/net6.0/greetFunction.pdb
+/home/codex/c-sharp_projects/greetApp/greetFunction/obj/Debug/net6.0/greetFunction.csproj.AssemblyReference.cache
+/home/codex/c-sharp_projects/greetApp/greetFunction/obj/Debug/net6.0/greetFunction.GeneratedMSBuildEditorConfig.editorconfig
+/home/codex/c-sharp_projects/greetApp/greetFunction/obj/Debug/net6.0/greetFunction.AssemblyInfoInputs.cache
+/home/codex/c-sharp_projects/greetApp/greetFunction/obj/Debug/net6.0/greetFunction.AssemblyInfo.cs
+/home/codex/c-sharp_projects/greetApp/greetFunction/obj/Debug/net6.0/greetFunction.csproj.CoreCompileInputs.cache
+/home/codex/c-sharp_projects/greetApp/greetFunction/obj/Debug/net6.0/greetFunction.dll
+/home/codex/c-sharp_projects/greetApp/greetFunction/obj/Debug/net6.0/refint/greetFunction.dll
+/home/codex/c-sharp_projects/greetApp/greetFunction/obj/Debug/net6.0/greetFunction.pdb
+/home/codex/c-sharp_projects/greetApp/greetFunction/obj/Debug/net6.0/greetFunction.genruntimeconfig.cache
+/home/codex/c-sharp_projects/greetApp/greetFunction/obj/Debug/net6.0/ref/greetFunction.dll
