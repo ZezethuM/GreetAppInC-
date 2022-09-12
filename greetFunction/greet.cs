@@ -1,6 +1,6 @@
 namespace greetFunction;
 
-public class Greet
+public class Greet : IGreet
 {
     public string Name
     {
@@ -13,9 +13,9 @@ public class Greet
         set;
     } = string.Empty;
     
-    public static Dictionary<string, int> myFriends = new Dictionary<string, int>();
-    public static int count = 1;
-    public static string Messages(string[] usercomm)
+    public static  Dictionary<string, int> myFriends = new Dictionary<string, int>();
+    public  int count = 1;
+    public string Messages(string[] usercomm)
     {
         string message = "";
         if(usercomm.Length == 3)
@@ -40,7 +40,7 @@ public class Greet
         return message;
     }
 
-    public static void greetedFriends(string friends, int count)
+    public  void greetedFriends(string friends, int count)
     { 
          if(myFriends.ContainsKey(friends))
         {
@@ -51,11 +51,11 @@ public class Greet
             myFriends.Add(friends, count);
         }
     }
-    public static Dictionary<string,int> printNames(Dictionary<string,int> myFriends)
+    public  Dictionary<string,int> printNames()
     {
             return myFriends;
     }
-    public static string printName(Dictionary<string,int> myFriends, string friendName)
+    public string printName(string friendName)
     { 
          if(myFriends.ContainsKey(friendName))
          {
@@ -66,7 +66,7 @@ public class Greet
             return "Your friend is not on the list please do greet them.";
         }    
     }
-    public static string Counter(Dictionary<string, int> myFriends)
+    public string Counter()
     {
         if(myFriends.Count() == 0)
         {
@@ -77,7 +77,7 @@ public class Greet
             return myFriends.Count() + "," + "friend/s have been greeted.";
         }
     }
-    public static string Clear(Dictionary<string, int> myFriends)
+    public  string Clear()
     {
         if(myFriends.Count() != 0)
         {
@@ -85,9 +85,9 @@ public class Greet
         }
         return "All your friends have been cleared!!";
     }
-     public static string ClearAll(Dictionary<string, int> myFriend, string name)
+     public  string ClearAll(string name)
     {
-        if(myFriend.ContainsKey(name))
+        if(myFriends.ContainsKey(name))
         {
             myFriends.Remove(name);
         }

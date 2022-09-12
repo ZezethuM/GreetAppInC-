@@ -1,8 +1,23 @@
-﻿using greetFunction;
-Greet test = new Greet();
+﻿using Npgsql;
+using Dapper;
+using greetFunction;
+
+IGreet greets = new GreetWithBD();
+
 string userCommand = "";
 string Name = "";
-string Language = "";
+
+    string connectionString = "Server=tiny.db.elephantsql.com;Port=5432;Database=yadlvyzc;UserId=yadlvyzc;Password=b2NCy-wd_58-hEenzMDVqUJA4VYlNWkJ";
+
+    var connection = new NpgsqlConnection(connectionString);
+        connection.Open();
+
+    string CREATE_FRIENDS_TABLE = @"create table if not exists friends(
+        FriendsName  varchar(40) NOT NULL,
+        Count int NOT NULL);";
+
+    connection.Execute(CREATE_FRIENDS_TABLE);
+
 while(userCommand != "exit")
 {
 Console.WriteLine("Welcome to the Greetings Application.");
@@ -10,22 +25,23 @@ Console.WriteLine("Enter: help to see commands you can use on the App");
 Console.WriteLine("***********************************");
 Console.Write("Please enter a command to: ");
 userCommand = Console.ReadLine();
+
 string[] users = userCommand.Split(" ");
 int counter = 1;
 
 if(users[0] == "greet")
 {
     Name = users[1];
-    Console.WriteLine(Greet.Messages(users));
-    Greet.greetedFriends(Name, counter);
+    Name = char.ToUpper(Name[0]) + Name.Substring(1);
+    Console.WriteLine(greets.Messages(users));
+    greets.greetedFriends(Name, counter);
     Console.WriteLine("****************************************");
 }
 
 else if(userCommand == "greeted")
 {
-    foreach(var key in Greet.printNames(Greet.myFriends))
+    foreach(var key in greets.printNames())
     {
-        // Console.WriteLine(Greet.printNames(Greet.myFriends));
         Console.WriteLine(key.Key + ":" +  key.Value);
     }
     if(Greet.myFriends.Count() == 0)
@@ -36,38 +52,31 @@ else if(userCommand == "greeted")
 else if(users[0] == "greeted")
 {
     Name = users[1];
-
-    if(Greet.myFriends.ContainsKey(Name))
+    
+    
+    if(greets.printNames().ContainsKey(Name))
     {
-        Console.WriteLine(Name + ":" + Greet.myFriends[Name]);
+        Console.WriteLine(Name + ":" + greets.printNames()[Name]);
 
         Console.WriteLine("*********************************");
     }
 }
 else if(userCommand == "counter")
 {
-    Console.WriteLine(Greet.Counter(Greet.myFriends));
+    Console.WriteLine(greets.Counter());
     Console.WriteLine("*********************************");
 }
 else if(userCommand == "clear")
 {   
-    Console.WriteLine(Greet.Clear(Greet.myFriends));
-    // Greet.myFriends.Clear();
-    // Console.WriteLine("All your friends have been cleared!!");
+    Console.WriteLine(greets.Clear());
     Console.WriteLine("*********************************");
 }
  else if(users[0] == "clear")
 {
-    if(Greet.myFriends.Count() != 0)
+    if(greets.printNames().Count() != 0)
     {
         Name = users[1];
-        Console.WriteLine(Greet.ClearAll(Greet.myFriends, Name));
-        Console.WriteLine("Below are the remaining names in the list: ");
-        foreach(var key in Greet.myFriends)
-         {
-            Console.WriteLine(key.Key + ":" +  key.Value);
-            Console.WriteLine("*********************************");
-         }
+        Console.WriteLine(greets.ClearAll(Name));
     }
 }
 else if(userCommand == "help")

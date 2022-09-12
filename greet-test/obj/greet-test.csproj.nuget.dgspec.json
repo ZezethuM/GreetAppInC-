@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/codex/c-sharp_projects/greetApp/greet-test/greet-test.csproj": {}
+    "/home/codex/My files/c-sharp_projects/greetApp/greet-test/greet-test.csproj": {}
   },
   "projects": {
-    "/home/codex/c-sharp_projects/greetApp/greet-test/greet-test.csproj": {
+    "/home/codex/My files/c-sharp_projects/greetApp/greet-test/greet-test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/codex/c-sharp_projects/greetApp/greet-test/greet-test.csproj",
+        "projectUniqueName": "/home/codex/My files/c-sharp_projects/greetApp/greet-test/greet-test.csproj",
         "projectName": "greet-test",
-        "projectPath": "/home/codex/c-sharp_projects/greetApp/greet-test/greet-test.csproj",
+        "projectPath": "/home/codex/My files/c-sharp_projects/greetApp/greet-test/greet-test.csproj",
         "packagesPath": "/home/codex/.nuget/packages/",
-        "outputPath": "/home/codex/c-sharp_projects/greetApp/greet-test/obj/",
+        "outputPath": "/home/codex/My files/c-sharp_projects/greetApp/greet-test/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/codex/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/codex/c-sharp_projects/greetApp/greetFunction/greetFunction.csproj": {
-                "projectPath": "/home/codex/c-sharp_projects/greetApp/greetFunction/greetFunction.csproj"
+              "/home/codex/My files/c-sharp_projects/greetApp/greetFunction/greetFunction.csproj": {
+                "projectPath": "/home/codex/My files/c-sharp_projects/greetApp/greetFunction/greetFunction.csproj"
               }
             }
           }
@@ -82,14 +82,14 @@
         }
       }
     },
-    "/home/codex/c-sharp_projects/greetApp/greetFunction/greetFunction.csproj": {
+    "/home/codex/My files/c-sharp_projects/greetApp/greetFunction/greetFunction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/codex/c-sharp_projects/greetApp/greetFunction/greetFunction.csproj",
+        "projectUniqueName": "/home/codex/My files/c-sharp_projects/greetApp/greetFunction/greetFunction.csproj",
         "projectName": "greetFunction",
-        "projectPath": "/home/codex/c-sharp_projects/greetApp/greetFunction/greetFunction.csproj",
+        "projectPath": "/home/codex/My files/c-sharp_projects/greetApp/greetFunction/greetFunction.csproj",
         "packagesPath": "/home/codex/.nuget/packages/",
-        "outputPath": "/home/codex/c-sharp_projects/greetApp/greetFunction/obj/",
+        "outputPath": "/home/codex/My files/c-sharp_projects/greetApp/greetFunction/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/codex/.nuget/NuGet/NuGet.Config"
@@ -115,6 +115,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Npgsql": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
